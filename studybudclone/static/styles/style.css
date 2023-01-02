@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+:root {
+    --color-bg: #2d2d39;
+    --color-bg-medium: #51546e;
+    --color-bg-light: #696d97;
+    --color-light-gray: #b2bdbd;
+    --color-main: #71c6dd;
+    --color-main-light: #e1f6fb;
+    --color-dark: #3f4156;
+}
+
+@media only screen and (min-width: 1500px) {
+    html {
+        font-size: 120%;
+    }
+}
+
+@media only screen and (min-width: 2100px) {
+    html {
+        font-size: 150%;
+    }
+}
+
+* {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    font-size: inherit;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-light-gray);
+    font-weight: 500;
+    line-height: 150%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-main);
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+}
+
+.header {
+    background-color: var(--color-dark);
+    padding: 1rem;
+}
+
+.container{
+    max-width: 120rem;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.container .subcontainer {
+    display: flex;
+    align-items: center;
+}
+
+.container .subcontainer img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.container .subcontainer h1 {
+    font-size: 180%;
+    font-weight: 800;
+    color: var(--color-main-light);
+    padding-left: 10px;
+    white-space: nowrap;
+}
+
+.container .search {
+    flex-basis: 40%;
+    background-color: var(--color-bg-medium);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 0 30% 0 10%;
+}
+
+.container .search label svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: var(--color-light-gray);
+    margin-right: 10px;
+}
+
+.container .search input[type=text] {
+    background: none;
+    outline: none;
+    border: 0;
+    color: var(--color-main-light);
+}
+
+.container .account .subcontainer img {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 10px;
+}
+
+.dropdown-user {
+    position: relative;
+}
+
+.dropdown-user > .subcontainer {
+    background: none;
+    cursor: pointer;
+    border: none;
+    color: var(--color-main);
+}
+
+.dropdown-user .account-menu {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 5px);
+    background-color: var(--color-bg-light);
+    border-radius: .2rem;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 150ms ease-in-out, opacity 150ms ease-in-out;
+}
+
+.dropdown-user > .subcontainer:focus + .account-menu {
+    transform: translateY(0);   
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.account-menu a {
+    padding: 10px 15px 10px;
+    color: var(--color-main-light);
+}
+
+.account-menu a:hover {
+    background: var(--color-bg-medium);
+}
+
+.account-menu a svg {
+    fill: var(--color-light-gray);
+    margin-right: 10px;
+}

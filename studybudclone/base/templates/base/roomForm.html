@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+
+{% block content %} 
+<main class="outer">
+    <div class="box-center profile">
+        <div class="box-center__inner">
+            <div class="header flex">
+                <a href="{% url 'home' %}">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                      <title>arrow-left</title>
+                      <path d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
+                      </path>
+                    </svg>
+                </a>
+                <h3>{{ header }} study room</h3>
+            </div>
+            <form action="" method="POST" class="form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="room_topic">Topic Name</label><br>
+                    <input required type="text" value="{{ room.topic.name }}" name="topic" list="topic-list">
+                    <dataList id="topic-list">
+                        <select id="room_topic">
+                            {% for topic in topics %}
+                                <option value="{{ topic.name }}">{{ topic.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </dataList>
+                </div>
+                <div class="form-group">
+                    <label>Room Name</label><br>
+                    {{ form.name }}
+                </div>
+                <div class="form-group">
+                    <label>Room Description</label><br>
+                    {{ form.description }}
+                </div>
+                <div class="form__btn">
+                    <a href="{% url 'home' %}" class="btn btn--dark">Cancel</a>
+                    <button class="btn" type="submit">Submit</button>
+                </div>
+            </form> 
+        </div>
+    </div>     
+</main>
+{% endblock content %}

@@ -1,0 +1,364 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+body {
+    background-color: color(bg);
+    // width: 100vw;
+    // height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: color(link);
+    display: inline-block;
+}
+
+// ============== SEARCH-BOX TEMPLATE ==============
+form.search-box {
+    @include flex-center;
+    padding: 1rem 1.2rem;
+    border-radius: 5px;
+    width: 400px;
+    background-color: color(h-medium);
+    svg {
+        @include svg-icon;
+        margin-right: 15px;
+    }
+    input {
+        width: 100%;
+        outline: none;
+        background: none;
+        color: color(light);
+        border: 0;
+        font-size: 16px;
+    }
+}
+
+// ============== GRID TEMPLATE ==============
+.grid {
+    margin: 8px 5%;
+    color: color(light);
+    display: grid;
+    column-gap: 3%;
+}
+
+// ============== VARIATIONS ON BUTTON ==============
+.btn {
+    background: color(link);
+    color: color(shadow);
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    svg {
+        width: 1rem;
+        height: 1rem;
+        fill: color(shadow);
+        margin-right: 10px;
+    }
+    &--dark {
+        color: color(light);
+        background: color(h-light);
+    }
+    &--outline {
+        color: color(link);
+        background: none;
+        border: 2px solid color(link);
+        border-radius: 22px;
+    }
+}
+
+// ============== USER DATA ==============
+.userDetails {
+    @include flex-center;
+    .userName {
+        @include flex-center;
+    }
+    a {
+        display: inline-flex;
+        align-items: center;
+        img {
+            margin-right: 10px;
+        }
+        &.delete {
+            display: inline;
+
+        }
+        svg {
+            @include svg-icon;
+        }
+    }
+    small {
+        color: color(time);
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+}
+
+// ============== DIFFERENT SIZES FOR USER IMAGE ==============
+.avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    padding: 1px;
+    background-color: color(link);
+    &--small {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+    &--large {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+// ============== USED FOR ".CONTENT" GRID BOX ON ["HOME-PAGE", "USERPROFILE-PAGE"] ==============
+.roomList {
+    .roomList__item {
+        background-color: color(h-dark);
+        border-radius: 8px;
+        padding: 15px;
+        margin-top: 15px;
+        .userDetails {
+            justify-content: space-between;
+        }
+        h3 a {
+            margin: 20px 0 40px 0;
+            color: color(light);
+            transition: color 0.3s ease-in-out;
+            &:hover {
+                color: color(link);
+            }
+        }
+        .roomList__item__footer {
+            display: flex;
+            align-items: center;
+            svg {
+                @include svg-icon;
+                fill: color(link);
+                margin-right: 8px;
+            }
+            small {
+                font-size: 0.8rem;
+            }
+            span {
+                display: inline-block;
+                margin-left: auto;
+                font-size: 0.8rem;
+                min-width: 40px;
+                padding: 10px 20px;
+                border-radius: 20px;
+                background-color: color(h-medium);
+            }
+        }
+    }
+}
+
+// ============== outline classes used for ["home.activity", "room.activity", "room.content"] ==============
+.box-layout {
+    background-color: color(h-dark);
+    border-radius: 10px;
+    .room__top {
+        border-radius: 10px 10px 0 0;
+        background-color: color(h-light);
+        padding: 10px 20px;
+    }
+    .room__body {
+        padding: 10px 20px;
+    }
+}
+
+
+// ============== SAME TEMPLATE FOR ["LOGIN-PAGE", "REGISTER-PAGE", "UPDATEUSER-PAGE", "ROOMFORM-PAGE", "ACTIVITY-PAGE", "TOPICS-PAGE", "DELETE-PAGE"] ==============
+.outer {
+    position: relative;
+    .box-center {
+        width: 450px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        &.profile {
+            width: 60%;
+        }
+        &.topics {
+            width: 50%;
+        }
+        &.delete-page,
+        &.activity-page {
+            width: 40%;
+        }
+        .box-center__inner {
+            background-color: color(h-dark);
+            border-radius: 0.5rem;
+            margin: 30px 0px;
+            .header {
+                background-color: color(h-light);
+                color: color(light);
+                padding: 10px 20px;
+                border-radius: 10px 10px 0px 0px;
+                &.flex {
+                    @include flex-center;
+                    gap: 20px;
+                    svg {
+                        @include svg-icon;
+                    }
+                }
+                h3 {
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+            }
+            h4 {
+                text-align: center;
+                color: color(link);
+                margin-top: 20px;
+            }
+            .delete-msg {
+                margin: 40px 30px 0px 30px;
+                p {
+                    color: color(time);
+                }
+                h4 {
+                    font-weight: 500;
+                    margin: 16px 0px;
+                    color: color(time);
+                    span {
+                        color: color(link);
+                    }
+                }
+            }
+            .form {
+                padding: 40px 30px;
+                color: color(light-gray);
+                .form-group {
+                    label {
+                        color: color(light-gray);
+                    }
+                    input, textarea {
+                        margin: 5px 0px 20px 0px;
+                        width: 100%;
+                        padding: 0.6rem;
+                        outline: none;
+                        border: 1px solid color(h-light);
+                        background: transparent;
+                        border-radius: 3px;
+                        color: color(light);
+                        &:focus {
+                            border-color: color(link);
+                        }
+                    }
+                    textarea {
+                        height: 10rem;
+                        resize: none;
+                    }
+                }
+                .form__btn {
+                    @include flex-center;
+                    justify-content: center;
+                    gap: 30px;
+                }
+            }
+            .auth-action {
+                text-align: center;
+                padding-bottom: 30px;
+                p {
+                    color: color(light);
+                    font-size: 13px;
+                }
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+// ============== USED FOR ".BROWSE" GRID BOX ON ["HOME-PAGE", "USERPROFILE-PAGE"] ==============
+// ============== ALSO USED FOR ["TOPICS-PAGE"] ==============
+.browse {
+    h3 {
+        text-transform: uppercase;
+        color: color(h-light);
+    }
+    a {
+        @include flex-center;
+        svg {
+            @include svg-icon;
+            fill: color(link);
+            margin-left: 8px;
+        }
+    }
+}
+ul.topics-list {
+    list-style-type: none;
+    li {
+        @include flex-center;
+        justify-content: space-between;
+        margin: 10px 0px;
+        padding: 10px 0px;
+        &.active,
+        &:hover {
+            a,
+            span {
+                color: color(link);
+            }
+
+        } 
+        a {
+            color: color(time);
+        }
+        span {
+            color: color(time);
+            padding: 8px 10px;
+            border-radius: 3px;
+            background-color: color(h-dark);
+        }
+    }
+}
+// ============== USED FOR ".ACTIVITY" GRID BOX ON ["HOME-PAGE", "USERPROFILE-PAGE"] ==============
+// ============== USED FOR ["ACTIVITY-PAGE"] ==============
+.activity__body {
+    padding: 0px 10px 10px 10px;
+    color: color(light);
+    .activity-details {
+        border: 2px solid color(h-medium);
+        margin-top: 10px;
+        padding: 15px;
+        border-radius: 0.2rem;
+        .userDetails {
+            align-items: flex-start;
+            justify-content: space-between;
+            a {
+                align-items: flex-start;
+                .userName {
+                    display: block;
+                    small {
+                        display: block;
+                        font-size: 0.75rem;
+                        color: color(time-dark);
+                        line-height: 1rem;
+                    }
+                }
+            }
+        }
+        p {
+            text-align: center;
+            margin: 8px 0px 16px 0px;
+        }
+        .message-body {
+            padding: 12px 10px;
+            background-color: color(shadow);
+            border-radius: 0.2rem;
+            small {
+                font-size: 0.8rem;
+            }
+        }
+    }
+    
+}

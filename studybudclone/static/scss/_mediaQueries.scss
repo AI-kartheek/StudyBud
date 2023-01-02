@@ -1,0 +1,57 @@
+@media screen and (max-width: 1090px) {
+    .browse,
+    .activity {
+        display: none;
+    }
+    .grid {
+        display: block;
+        
+    }
+} 
+
+@media screen and (max-width: 900px) {
+    .nav {
+        .logo span {
+            display: none;
+        }
+        .search {
+            .search-box {
+                width: 300px;
+            }
+        }
+    } 
+    .outer {
+        .box-center {
+            &.topics,
+            &.delete-page,
+            &.activity-page {
+                width: 70%;
+            }
+        }
+    }
+} 
+
+@media screen and (max-width: 740px) {
+    .nav {
+        .search {
+            display: none;
+        }
+    } 
+    .grid.home {
+        .content {
+            .mobile-menu {
+                display: block;
+            }
+        }
+    }
+    .outer {
+        .box-center {
+            width: 80%;
+            &.topics,
+            &.profile,
+            &.activity-page {
+                width: 80%;
+            }
+        }
+    }
+} 

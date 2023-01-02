@@ -1,0 +1,18 @@
+// START (functions)
+@function color($color) {
+    @return map-get($colors, $color);
+}
+// END (functions)
+
+// START (Mixins)
+@mixin flex-center() {
+    display: flex;
+    align-items: center;
+}
+
+@mixin svg-icon() {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: color(light-gray);
+}
+// END (Mixins)

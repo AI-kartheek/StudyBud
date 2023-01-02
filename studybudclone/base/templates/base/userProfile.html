@@ -1,0 +1,40 @@
+{% extends 'main.html' %} 
+ 
+{% block content %} 
+<main class="grid userProfile">
+    <div class="browse">
+        <h3>BROWSE TOPICS</h3>
+        <!-- BROWSE TOPICS COMPONENT -->
+        {% include "base/component_topics.html" %}
+        <a href="{% url 'topics' %}">
+            <span>More</span>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <title>chevron-down</title>
+                <path d="M16 21l-13-13h-3l16 16 16-16h-3l-13 13z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="profileHeader">
+            <img src="{{ user.avatar.url }}" alt="" class="avatar avatar--large">
+            <h5>{{ user.name }}</h5>
+            {% if request.user == user %}
+                <a href="{% url 'update-user' %}" class="btn btn--outline">Edit Profile</a>
+            {% endif %}
+        </div>
+        <h4>about</h4>
+        <p>{{ user.bio }}</p>
+        <h4>{{ rooms.count }} ROOMS HOSTED BY {{ user.name }}</h4>
+        <!-- ROOM LIST COMPONENT  -->
+        {% include "base/component_roomList.html" %}
+    </div>
+    <div class="activity box-layout">
+        <div class="room__top">
+            <h3>RECENT ACTIVITY</h3>
+        </div>
+        <!-- RECENT ACTIVITIES  -->
+        {% include "base/component_activity.html" %}
+    </div>
+</main>
+{% endblock content %}

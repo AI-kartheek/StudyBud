@@ -1,0 +1,277 @@
+// ============== NAV BAR PAGE ==============
+.nav {
+    padding: 10px 5% 10px 5%;
+    background-color: color(h-dark);
+
+    .flex {
+        @include flex-center;
+        justify-content: space-between;
+
+        .logo {
+
+            a {
+                @include flex-center;
+                img {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                } 
+                span {
+                    font-size: 25px;
+                    font-weight: bold;
+                    color: color(light-gray);
+                    white-space: nowrap;
+                    margin-left: 15px;
+                }
+            }
+        }
+
+        .search {
+            flex-basis: 50%;
+        }
+        .account {
+            // LOGOUT
+            position: relative;
+            .drop-btn {
+                @include flex-center;
+                cursor: pointer;
+                span {
+                    white-space: nowrap;
+                    color: color(link);
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+                svg {
+                    @include svg-icon;
+                }
+            }
+
+            .dropdown {
+                z-index: 10;
+                position: absolute;  // relative to .account
+                background-color: color(h-medium);
+                padding: 10px;
+                border-radius: 5px;
+                transform: translateY(-10px);
+                box-shadow: 2px 3px 3px 1px color(shadow);
+                opacity: 0;
+                pointer-events: none;
+                transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, pointer-events 0.5s ease-in-out;
+
+                &.show {
+                    opacity: 1;
+                    pointer-events: auto;
+                    transform: translateY(10px);
+                }
+
+                a {
+                    @include flex-center;
+                    padding: 10px;
+                    border-radius: 5px;
+                    
+                    &:hover {
+                        background-color: color(h-light);
+                    }
+
+                    svg {
+                        @include svg-icon;
+                    }
+    
+                    span {
+                        white-space: nowrap;
+                        margin-left: 15px;
+                    }
+                }
+            }
+
+            // LOGIN
+            a {
+                @include flex-center;
+
+                span {
+                    white-space: nowrap;
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+}
+
+
+// ============== HOME PAGE ==============
+.grid.home {
+    grid-template-columns: 2fr 7fr 3fr;
+    .content {
+        .mobile-menu {
+            display: none;
+            .search-box {
+                width: 100%;
+            }
+            .mobile-menu__items {
+                @include flex-center;
+                justify-content: center;
+                gap: 5%;
+                padding: 30px 0px;
+                a {
+                    font-weight: 700;
+                }
+            }
+        }
+        .roomHeader {
+            @include flex-center;
+            justify-content: space-between;
+            .roomCount p {
+                color: color(h-light);
+                font-size: 15px;
+                margin-top: 8px;
+            }
+        }
+    }
+}
+
+// ============== ROOM PAGE ==============
+.grid.room {
+    grid-template-columns: 9fr 3fr;
+    .content.box-layout {
+        .room__top {
+            @include flex-center;
+            justify-content: space-between;
+            .room__top__left {
+                @include flex-center;
+                a svg{
+                    @include svg-icon;
+                    margin-right: 20px;
+                }
+            }
+            .room__top__right {
+                a svg {
+                    @include svg-icon;
+                    margin-left: 20px;
+                }
+            }
+        }
+        .room__body {
+            h2 {
+                @include flex-center;
+                justify-content: space-between;
+                font-weight: 500;
+                color: color(link);
+                small {
+                    // float: right;
+                    font-size: 0.8rem;
+                    font-weight: 400;
+                    color: color(time);
+                }
+            } 
+            i {
+                display: inline-block;
+                font-size: 0.8rem;
+                font-weight: 400;
+                color: color(time);
+                margin-top: 18px;
+                margin-bottom: 8px;
+            }
+            .room__messages {
+                background-color: color(shadow);
+                margin: 20px 0 3px 0;
+                padding: 15px 0 0 15px;
+                border-radius: 10px;
+                height: 330px;
+                overflow-y: auto;
+                .message {
+                    border-left: 1px solid color(h-dark);
+                    margin-bottom: 15px;
+                    padding: 15px;
+                    .userDetails {
+                        justify-content: space-between;
+                        .userName {
+                            gap: 30px;
+                        }
+                    }
+                    p {
+                        margin-top: 15px;
+                        font-size: 15px;
+                    }
+                }
+            }
+            form {
+                padding: 10px 20px;
+                border-radius: 18px;
+                background-color: color(shadow);
+                input {
+                    width: 100%;
+                    outline: none;
+                    background: none;
+                    border: 0;
+                    color: color(light);
+                    font-weight: 400;
+                    &::placeholder {
+                        color: color(light-gray);
+                    }
+                }
+            }
+        }
+    }
+    .activity.box-layout {
+        .room__top {
+            h3 {
+                small {
+                    margin-left: 4px;
+                    color: color(link);
+                    font-size: 0.8rem;
+                    font-weight: 400;
+                }
+            }
+        }
+        .room__body {
+            padding-top: 0px;
+            height: 80vh;
+            overflow-y: auto;
+            .userDetails {
+                margin-top: 15px; 
+            }
+        }
+
+    }
+}
+
+// ============== USER PROFILE PAGE ==============
+.grid.userProfile {
+    grid-template-columns: 2fr 7fr 3fr;
+    .content {
+        .profileHeader {
+            text-align: center;
+            h5 {
+                font-size: 18px;
+                margin: 10px 0;
+            }
+            a {
+                font-weight: 700;
+            }
+        }
+        h4 {
+            text-transform: uppercase;
+            color: color(h-light);
+            margin-top: 15px;
+        }
+        p {
+            margin: 10px 0px 30px 0px;
+            color: color(time);
+        }
+    }
+}
+
+// ============== TOPICS PAGE ==============
+.topics-body {
+    padding: 30px;
+    form.search-box {
+        width: 100%;
+    }
+    ul.topics-list {
+        li {
+            border-bottom: 1px solid color(h-medium);
+            span {
+                background-color: color(h-medium);
+            }
+        }
+    }
+}
