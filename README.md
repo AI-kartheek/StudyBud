@@ -1,7 +1,8 @@
 # StudyBud
-Developed a responsive full featured Discord like web application with register login, logout, and some CRUD operations on chat rooms, and search option to assist the users in finding their study partners for discussion purposes.
+Developed a responsive full featured Discord like web application with register login, logout, and some CRUD operations on chat rooms, and search option to help
+the users in finding their study partners for discussion purposes.
 
-* This project is learnt from an epic 7hr [youtube video](https://www.youtube.com/watch?v=PtQiiknWUcI&t=23154s). I learnt a lot from this project and a big thanks to him.
+* This project is learnt from an epic 7hr [Youtube Video](https://www.youtube.com/watch?v=PtQiiknWUcI&t=23154s). I learnt a lot from this project and a big thanks to him.
 
 ### APP Preview
 **Home Page**
@@ -13,7 +14,7 @@ Developed a responsive full featured Discord like web application with register 
 **Profile Page**
 ![profile page](https://github.com/AI-kartheek/StudyBud/blob/main/pics/profile.png)
 
-### Functionality and Features
+### Features and Functionality
 * Register, login, logout
 * Create new room
 * Join a chat room and start conversation
@@ -23,7 +24,7 @@ Developed a responsive full featured Discord like web application with register 
 * Upload profile picture
 * responsive on almost all devices.
 
-### Tools And Technology
+### Tools And Technology Used
 * Python
 * Django
 * SQLite Database
@@ -32,19 +33,19 @@ Developed a responsive full featured Discord like web application with register 
 * JavaScript
 
 ### Cloning the repository
-* **STEP-1:** Clone the repository using the command below :
+* **STEP-1:** Clone the repository using the command below 
 ```bash
 git clone https://github.com/AI-kartheek/StudyBud.git
 
 ```
 
-* **STEP-2:** Move into the directory where we have the project files : 
+* **STEP-2:** Move into the directory where we have the project files 
 ```bash
 cd StudyBud
 
 ```
 
-* **STEP-3:** Create a virtual environment :
+* **STEP-3:** Create a virtual environment 
 ```bash
 # Let's install virtualenv first
 pip install virtualenv
@@ -54,13 +55,13 @@ virtualenv env_name
 
 ```
 
-* **STEP-4:** Activate the virtual environment :
+* **STEP-4:** Activate the virtual environment 
 ```bash
-env_name\scripts\activate
+env_name/scripts/activate
 
 ```
 
-* **STEP-5:** Install the requirements :
+* **STEP-5:** Install the requirements 
 ```bash
 pip install -r requirements.txt
 
