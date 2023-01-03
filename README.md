@@ -1,5 +1,5 @@
 # StudyBud
-Developed a responsive full featured Discord like web application with login, logout, and some CRUD operations on char rooms, and search option to assist the users in finding their study partners for discussion purposes.
+Developed a responsive full featured Discord like web application with register login, logout, and some CRUD operations on chat rooms, and search option to assist the users in finding their study partners for discussion purposes.
 
 * This project is learnt from an epic 7hr [youtube video](https://www.youtube.com/watch?v=PtQiiknWUcI&t=23154s). I learnt a lot from this project and a big thanks to him.
 
